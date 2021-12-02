@@ -31,7 +31,7 @@ function generatePhoneNumber(array) {
     if(array[i] > 9 || array[i] < 0 || contador >= 3) {
       return "não é possível gerar um número de telefone com esses valores"
     }
-    contador = 0
+    contador = 0 //Passei horas pra me tocar disso!
   }
   array.splice(0,0,"(");
   array.splice(3,0,")");
@@ -42,8 +42,25 @@ function generatePhoneNumber(array) {
 
 
 // Desafio 12
-function triangleCheck() {
+function triangleCheck(lineA, lineB, lineC) {
   // seu código aqui
+  let absBC = Math.abs(lineB - lineC)
+  let absAC = Math.abs(lineA - lineC)
+  let absAB = Math.abs(lineA - lineB)
+
+  let somaBC = lineB + lineC
+  let somaAC = lineA + lineC
+  let somaAB = lineA + lineB
+
+  if(lineA < somaBC && lineA > absBC) {
+    return true
+  } else if (lineB < somaAC && lineB > absAC) {
+    return true
+  } else if (lineC < somaAB && lineC > absAB) {
+    return true
+  } else {
+    return false
+  }
 }
 
 // Desafio 13
