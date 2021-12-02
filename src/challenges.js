@@ -1,4 +1,5 @@
 // Desafio 1
+// seu código aqui
 function compareTrue(a, b) {
   if (a === true && b === true) {
     return true;
@@ -112,7 +113,7 @@ function decode(string) {
   let code = ''
   for (let i = 0; i < string.length; i += 1) {
     if (string[i] === '1') {
-    code += 'a'
+      code += 'a'
   } else if (string[i] === '2') {
     code += 'e'
   } else if (string[i] === '3') {
