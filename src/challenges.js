@@ -1,7 +1,6 @@
 // Desafio 1
 function compareTrue(a, b) {
-  // seu código aqui
-  if(a === true && b === true) {
+  if (a === true && b === true) {
     return true;
   } else {
     return false;
@@ -35,7 +34,7 @@ function footballPoints(wins, ties) {
 
 // Desafio 6
 function highestCount(array) {
-  // seu código aqui
+// seu código aqui
   let maiorNumero = array[0]
   let contador = 0
   for(let i = 0; i <  array.length; i += 1) {
@@ -113,17 +112,17 @@ function decode(string) {
   let code = ''
   for (let i = 0; i < string.length; i += 1) {
     if (string[i] === '1') {
-        code += 'a'
+    code += 'a'
   } else if (string[i] === '2') {
-        code += 'e'
+    code += 'e'
   } else if (string[i] === '3') {
-        code += 'i'
+    code += 'i'
   } else if (string[i] === '4') {
-        code += 'o'
+    code += 'o'
   } else if (string[i] === '5') {
-        code += 'u'   
+    code += 'u'   
   } else {
-        code += string[i]
+    code += string[i]
   }
 }
 return code
