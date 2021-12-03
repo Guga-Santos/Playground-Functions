@@ -5,14 +5,13 @@ function techList(arrayTech, name) {
   let objeto = [];
 
   for (let i = 0; i < arrayTech.length; i += 1) {
-    objeto.push({ 'tech': arrayTech[i], 'name': name });
+    objeto.push({ tech: arrayTech[i], name });
   }
 
   if (objeto.length === 0) {
     return 'Vazio!';
-  } else {
-    return objeto;
   }
+  return objeto;
 }
 
 // Desafio 11
@@ -40,7 +39,6 @@ function generatePhoneNumber(array) {
   return array.join('');
 }
 
-
 // Desafio 12
 function triangleCheck(lineA, lineB, lineC) {
   // seu código aqui
@@ -54,13 +52,12 @@ function triangleCheck(lineA, lineB, lineC) {
 
   if (lineA < somaBC && lineA > absBC) {
     return true;
-  } else if (lineB < somaAC && lineB > absAC) {
+  } if (lineB < somaAC && lineB > absAC) {
     return true;
-  } else if (lineC < somaAB && lineC > absAB) {
+  } if (lineC < somaAB && lineC > absAB) {
     return true;
-  } else {
-    return false;
   }
+  return false;
 }
 
 // Desafio 13
@@ -78,10 +75,9 @@ function hydrate(string) {
     }
   }
   if (quantidade > 1) {
-    return quantidade + ' copos de água';
-  } else {
-    return quantidade + ' copo de água';
+    return `${quantidade} copos de água`;
   }
+  return `${quantidade} copo de água`;
 }
 
 module.exports = {
