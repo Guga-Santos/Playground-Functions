@@ -64,8 +64,24 @@ function triangleCheck(lineA, lineB, lineC) {
 }
 
 // Desafio 13
-function hydrate() {
+function hydrate(string) {
   // seu código aqui
+  let quantidade = 0
+  let comparador = "123456789"
+  for (let i = 0; i < string.length; i += 1) {
+    for (let j = 0; j < comparador.length; j += 1){
+        let soma = string[i]
+      if (comparador[j] === string[i]) {
+        let conversor = Math.floor(soma)
+        quantidade += conversor
+      }
+    }
+  }
+  if (quantidade > 1) {
+  return quantidade + " copos de água"
+  } else {
+    return quantidade + " copo de água"
+  }
 }
 
 module.exports = {
