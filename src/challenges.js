@@ -59,63 +59,72 @@ function catAndMouse(mouse, cat1, cat2) {
 // Desafio 8
 function fizzBuzz(array) {
   // seu código aqui
-  let resultado = [];
-  for (let i of array) {
-    if (i % 3 === 0 && i % 5 === 0) {
-      resultado.push('fizzBuzz');
-    } else if (i % 3 === 0) {
-      resultado.push('fizz');
-    } else if (i % 5 === 0) {
-      resultado.push('buzz');
+  let arrayString = [];
+  for (let i = 0; i < array.length; i += 1) {
+    if (array[i] % 3 === 0 && array[i] % 5 === 0) {
+      arrayString.push('fizzBuzz');
+    } else if (array[i] % 3 === 0) {
+      arrayString.push('fizz');
+    } else if (array[i] % 5 === 0) {
+      arrayString.push('buzz');
     } else {
-      resultado.push('bug!');
+      arrayString.push('bug!');
     }
   }
-  return resultado;
+  return arrayString;
 }
 
 // Desafio 9
 function encode(string) {
   // seu código aqui
-  let code = '';
+//   let code = '';
   for (let i = 0; i < string.length; i += 1) {
-    if (string[i] === 'a') {
-      code += '1';
-    } else if (string[i] === 'e') {
-      code += '2';
-    } else if (string[i] === 'i') {
-      code += '3';
-    } else if (string[i] === 'o') {
-      code += '4';
-    } else if (string[i] === 'u') {
-      code += '5';
-    } else {
-      code += string[i];
-    }
+    string = string.replace('a', '1').replace('e', '2').replace('i', '3').replace('o', '4')
+      .replace('u', '5');
   }
-  return code;
+  return string;
 }
+//     if (string[i] === 'a') {
+//       code += '1';
+//     } else if (string[i] === 'e') {
+//       code += '2';
+//     } else if (string[i] === 'i') {
+//       code += '3';
+//     } else if (string[i] === 'o') {
+//       code += '4';
+//     } else if (string[i] === 'u') {
+//       code += '5';
+//     } else {
+//       code += string[i];
+//     }
+//   }
+//   return code;
+// }
 
 function decode(string) {
   // seu código aqui
-  let code = '';
   for (let i = 0; i < string.length; i += 1) {
-    if (string[i] === '1') {
-      code += 'a';
-    } else if (string[i] === '2') {
-      code += 'e';
-    } else if (string[i] === '3') {
-      code += 'i';
-    } else if (string[i] === '4') {
-      code += 'o';
-    } else if (string[i] === '5') {
-      code += 'u';
-    } else {
-      code += string[i];
-    }
+    string = string.replace('1', 'a').replace('2', 'e').replace('3', 'i').replace('4', 'o')
+      .replace('5', 'u');
   }
-  return code;
+  return string;
 }
+//     if (string[i] === '1') {
+//       code += 'a';
+//     } else if (string[i] === '2') {
+//       code += 'e';
+//     } else if (string[i] === '3') {
+//       code += 'i';
+//     } else if (string[i] === '4') {
+//       code += 'o';
+//     } else if (string[i] === '5') {
+//       code += 'u';
+//     } else {
+//       code += string[i];
+//     }
+//   }
+//   return code;
+// }
 
 module.exports = {
   calcArea,
