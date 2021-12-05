@@ -19,6 +19,7 @@ function generatePhoneNumber(array) {
   if (array.length !== 11) {
     return 'Array com tamanho incorreto.';
   }
+
   for (let i = 0; i < array.length; i += 1) {
     let contador = 0;
     for (let j = 0; j < array.length; j += 1) {
@@ -30,33 +31,39 @@ function generatePhoneNumber(array) {
       return 'não é possível gerar um número de telefone com esses valores';
     }
   }
-  array.splice(0, 0, '(');
-  array.splice(3, 0, ')');
-  array.splice(4, 0, ' ');
-  array.splice(10, 0, '-');
-  return array.join('');
+
+  return array.join('').replace(/(\d{2})?(\d{5})?(\d{4})/, '($1) $2-$3');
 }
+// array.splice(0, 0, '(');
+// array.splice(3, 0, ')');
+// array.splice(4, 0, ' ');
+// array.splice(10, 0, '-');
+// //   return array.join('');
 
 // Desafio 12
 function triangleCheck(lineA, lineB, lineC) {
-  // seu código aqui
-  let absBC = Math.abs(lineB - lineC);
-  let absAC = Math.abs(lineA - lineC);
-  let absAB = Math.abs(lineA - lineB);
-
-  let somaBC = lineB + lineC;
-  let somaAC = lineA + lineC;
-  let somaAB = lineA + lineB;
-
-  if (lineA < somaBC && lineA > absBC) {
+  if (lineA < (lineB + lineC) && lineA > Math.abs(lineB - lineC)) {
     return true;
-  } if (lineB < somaAC && lineB > absAC) {
-    return true;
-  } if (lineC < somaAB && lineC > absAB) {
+  } if (lineB < (lineA + lineC) && lineB > Math.abs(lineA - lineC)) {
     return true;
   }
   return false;
 }
+// seu código aqui
+// let absBC = Math.abs(lineB - lineC);
+// let absAC = Math.abs(lineA - lineC);
+// let absAB = Math.abs(lineA - lineB);
+
+// let somaBC = lineB + lineC;
+// let somaAC = lineA + lineC;
+// let somaAB = lineA + lineB;
+
+// if (lineA < somaBC && lineA > absBC) {
+//   return true;
+// } if (lineB < somaAC && lineB > absAC) {
+//   return true;
+// } if (lineC < somaAB && lineC > absAB) {
+//   return true;
 
 // Desafio 13
 function hydrate(string) {

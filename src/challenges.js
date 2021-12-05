@@ -76,13 +76,18 @@ function fizzBuzz(array) {
 // Desafio 9
 function encode(string) {
   // seu código aqui
-//   let code = '';
-  for (let i = 0; i < string.length; i += 1) {
-    string = string.replace('a', '1').replace('e', '2').replace('i', '3').replace('o', '4')
-      .replace('u', '5');
-  }
-  return string;
+  return string.replace(/a/g, '1').replace(/e/g, '2').replace(/i/g, '3').replace(/o/g, '4')
+    .replace(/u/g, '5');
 }
+
+// Refatorei assim:
+//   let code = '';
+// for (let i = 0; i < string.length; i += 1) {
+//   string = string.replace('a', '1').replace('e', '2').replace('i', '3').replace('o', '4').replace('u', '5');
+// }
+// return string;
+
+// Iniciei assim:
 //     if (string[i] === 'a') {
 //       code += '1';
 //     } else if (string[i] === 'e') {
@@ -102,12 +107,17 @@ function encode(string) {
 
 function decode(string) {
   // seu código aqui
-  for (let i = 0; i < string.length; i += 1) {
-    string = string.replace('1', 'a').replace('2', 'e').replace('3', 'i').replace('4', 'o')
-      .replace('5', 'u');
-  }
-  return string;
+  return string.replace(/1/g, 'a').replace(/2/g, 'e').replace(/3/g, 'i').replace(/4/g, 'o')
+    .replace(/5/g, 'u');
 }
+// Refatorei assim:
+//   for (let i = 0; i < string.length; i += 1) {
+//     string = string.replace('1', 'a').replace('2', 'e').replace('3', 'i').replace('4', 'o')
+//       .replace('5', 'u');
+//   }
+//   return string;
+// }
+// Iniciei assim:
 //     if (string[i] === '1') {
 //       code += 'a';
 //     } else if (string[i] === '2') {
